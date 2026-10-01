@@ -1,0 +1,76 @@
+/* Layout base: riproduce il viewer Readymag (canvas 1024px, widget in posizione assoluta) */
+html,body{margin:0;padding:0}
+body{font-family:Inter,-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;color:#282828;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#mags{position:relative;width:1024px;margin:0 auto}
+article.page{position:relative;width:1024px;overflow:hidden}
+.page-fixed-bg-container{position:absolute;inset:0;z-index:0}
+.widget-background{position:absolute;inset:0}
+.content-scroll-wrapper,.content-bounds{position:relative}
+.page-content-container{position:absolute}
+.rmwidget{position:absolute;box-sizing:border-box}
+.animation-container{position:absolute;box-sizing:border-box;transition-property:opacity,transform;transition-timing-function:ease-in-out}
+/* widget con posizione fissa (menu in alto, ecc.) */
+.fixed-position-container,.fixed-position-container-top{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;pointer-events:none}
+.fixed-position-container .rmwidget,.fixed-position-container-top .rmwidget{pointer-events:auto}
+/* testo */
+.widget-text-v3{overflow:visible;word-wrap:break-word}
+.css-tw1d2u,.text-viewer{width:100%;height:100%}
+.text-viewer h1,.text-viewer h2,.text-viewer h3,.text-viewer h4,.text-viewer p{margin:0;white-space:pre-wrap}
+.align-left{text-align:left}.align-center{text-align:center}.align-right{text-align:right}.align-justify{text-align:justify}
+.maglink,.rm-link{cursor:pointer}
+.rm-link>.rmwidget,.maglink>.rmwidget{cursor:pointer}
+/* forme / svg */
+.svg-scale-wrapper{width:100%;height:100%}
+.svg-scale-wrapper svg,.widget-shape svg{display:block;width:100%;height:100%}
+.widget-shape.has-onhover-animation{cursor:pointer}
+/* widget "code" */
+.code-widget{overflow:hidden}
+/* placeholder grigi al posto dei media */
+.ph{position:absolute;inset:0;background:#d6d6d6;box-sizing:border-box;overflow:hidden}
+.ph-video{background:#c4c4c4}
+.ph-video::after{content:"";position:absolute;left:50%;top:50%;width:0;height:0;margin:-16px 0 0 -10px;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent rgba(255,255,255,.9)}
+.ph-shots{background:repeating-linear-gradient(135deg,#d6d6d6 0 12px,#cfcfcf 12px 24px)}
+.ph-bg{background:#e2e2e2}
+/* home: video a tutto schermo in sequenza al posto dello sfondo */
+.hero-reel{position:fixed;left:0;top:0;width:100vw;height:100vh;overflow:hidden;background:#ffffff}
+.hero-reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.hero-reel video.on{opacity:1}
+.hero-reel video.contain{object-fit:contain;background:#000000}
+/* testi in bianco durante i video segnati "|light" */
+.fixed-position-container .text-viewer span,.fixed-position-container .text-viewer a{transition:color .3s}
+body.hero-light .fixed-position-container .text-viewer span,body.hero-light .fixed-position-container .text-viewer a{color:#ffffff !important}
+/* home: solo il nome nel menu, cerchio vuoto con puntino al centro; tutta la pagina porta ad About (assets/home-enter.js) */
+.home-enter{position:fixed;left:0;top:0;width:100%;height:100%;z-index:1100;display:block;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.home-orb{position:absolute;left:50%;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;box-sizing:border-box;border:1px solid #000;transition:transform .55s cubic-bezier(.65,0,.35,1),opacity .55s ease,border-color .3s ease}
+.home-orb-dot{position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:#000;transition:background-color .3s ease;animation:home-dot 2.4s ease-in-out infinite}
+@keyframes home-dot{0%,100%{transform:scale(1);opacity:.95}50%{transform:scale(1.5);opacity:.6}}
+.home-enter:hover .home-orb{transform:scale(1.08)}
+.home-enter:focus-visible .home-orb{outline:1px solid currentColor;outline-offset:4px}
+.home-orb-label{position:absolute;left:50%;top:50%;margin-top:28px;transform:translateX(-50%);white-space:nowrap;font-family:custom_144973;font-size:12px;line-height:15px;letter-spacing:-0.1px;color:#000;transition:color .3s ease}
+body.hero-light .home-orb-label{color:#fff}
+body.hero-light .home-orb{border-color:#fff}
+body.hero-light .home-orb-dot{background:#fff}
+.home-enter::after{content:"";position:absolute;left:0;top:0;width:100%;height:100%;background:#000;opacity:0;pointer-events:none;transition:opacity .5s ease}
+body.home-leaving .home-orb{transform:scale(20);opacity:0}
+body.home-leaving .home-enter::after{opacity:1}
+@media (prefers-reduced-motion: reduce){.home-orb-dot{animation:none}}
+/* controlli dei video nelle pagine progetto (assets/video-controls.js): parole al posto delle icone */
+.vc-box{overflow:hidden}
+.vc-hit{position:absolute;left:0;top:0;width:100%;height:100%;padding:0;border:0;background:none;cursor:pointer}
+.vc-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:16px;padding:28px 16px 12px;background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0));font-family:custom_144973;font-size:12px;line-height:15px;letter-spacing:-0.1px;color:#fff;opacity:0;transition:opacity .25s ease}
+.vc-box:hover .vc-bar,.vc-box:focus-within .vc-bar,.vc-box.vc-paused .vc-bar{opacity:1}
+.vc-btn{padding:0;border:0;background:none;font:inherit;letter-spacing:inherit;color:inherit;cursor:pointer;white-space:nowrap}
+.vc-btn:hover{text-decoration:underline}
+.vc-time{white-space:nowrap;font-variant-numeric:tabular-nums;opacity:.8}
+.vc-track{position:relative;flex:1;height:13px;cursor:pointer;outline:none}
+.vc-track::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background:rgba(255,255,255,.4);transition:height .2s,top .2s}
+.vc-fill{position:absolute;left:0;top:6px;height:1px;background:#fff;transition:height .2s,top .2s}
+.vc-track:hover::before,.vc-track:focus-visible::before,.vc-track:hover .vc-fill,.vc-track:focus-visible .vc-fill{top:5px;height:3px}
+.vc-box:fullscreen{width:100%!important;height:100%!important;background:#000}
+.vc-box:fullscreen video{object-fit:contain!important}
+/* link nel testo (es. "Random Studio", "Back to projects"): grigi al passaggio del mouse, come il menu */
+.text-link{transition:color .2s ease}
+.text-link:hover{color:rgba(157,157,157,1)!important}
+/* loghi dei premi (Nebulo): leggermente trasparenti al passaggio del mouse */
+.award-link .rmwidget{transition:opacity .25s ease}
+.award-link:hover .rmwidget,.award-link:focus-visible .rmwidget{opacity:.5}

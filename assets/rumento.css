@@ -1,0 +1,103 @@
+/* Blocchi della pagina Rumentologo (tools/rumento_blocks.py): stesso font e colori delle pagine progetto */
+.rawblock{font-family:custom_144973;color:#000;font-size:15px;line-height:15px;letter-spacing:-0.2px}
+.rawblock p{margin:0}
+.rb-h{margin:0 0 14px;font-size:15px;font-weight:400;line-height:15px}
+.rb-h--u{text-decoration:underline}
+.rb-lead{max-width:640px;margin:0 0 32px!important;text-align:justify;letter-spacing:0}
+.rb-cap{margin:10px 0 18px!important;font-size:9px;line-height:12px;color:rgba(104,104,104,1)}
+.rb-rich{margin-top:0}
+
+/* confronto prima / dopo con i numeri */
+.rb-case{margin-bottom:72px}
+.rb-case:last-child{margin-bottom:0}
+.rb-case__head{display:flex;gap:16px;align-items:baseline;margin-bottom:22px}
+.rb-code{flex:0 0 auto;font-size:12px;color:rgba(104,104,104,1)}
+.rb-case__head h5{margin:0 0 6px;font-size:15px;font-weight:400}
+.rb-case__head p{color:rgba(104,104,104,1);max-width:560px}
+.rb-case__grid{display:grid;grid-template-columns:230px 1fr 230px;gap:40px;align-items:center}
+.rb-case__web{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.rb-case__webafter{max-width:320px;margin-top:28px}
+.rb-shot{margin:0}
+.rb-shot__frame{position:relative}
+.rb-shot__frame img{display:block;width:100%;height:auto}
+.rb-shot--web .rb-shot__frame{border:1px solid rgba(0,0,0,.12)}
+.rb-shot figcaption{margin-top:6px;font-size:9px;line-height:12px;color:rgba(104,104,104,1)}
+.rb-shot--phone figcaption{text-align:center}
+.rb-pin{position:absolute;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:#000;color:#fff;
+  font-size:11px;line-height:20px;text-align:center;letter-spacing:0;box-shadow:0 0 0 2px #fff}
+.rb-issues{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.rb-issues li{display:flex;gap:12px}
+.rb-n{flex:0 0 20px;height:20px;border-radius:50%;background:#000;color:#fff;font-size:11px;line-height:20px;text-align:center;letter-spacing:0}
+.rb-issues p{text-align:left}
+.rb-heur{display:inline-block;margin-top:4px;font-size:12px;color:rgba(104,104,104,1)}
+.rb-turn{max-width:640px;margin:28px 0 0!important}
+
+/* le quattro scelte: telefoni, due con il flusso animato (cursore che tocca) */
+.rb-choices{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.rb-choice h5{margin:14px 0 6px;font-size:15px;font-weight:400;text-align:center}
+.rb-choice p{font-size:12px;line-height:14px;color:rgba(104,104,104,1);text-align:center;padding:0 6px}
+.rb-phone{position:relative;width:100%;aspect-ratio:900/1813}
+.rb-phone img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.rb-phone__over{opacity:0}
+.rb-phone__over.is-in{opacity:1;transition:opacity .7s ease}
+.rb-tap{position:absolute;left:50%;top:92%;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;
+  background:rgba(255,255,255,.55);box-shadow:0 0 0 1.5px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.25);
+  opacity:0;transition:left .85s cubic-bezier(.65,0,.35,1),top .85s cubic-bezier(.65,0,.35,1),opacity .3s ease;pointer-events:none}
+.rb-tap.is-visible{opacity:1}
+.rb-tap.no-anim{transition:none}
+.rb-tap::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(166,206,78,.7)}
+.rb-tap.is-pressed{transform:scale(.82);transition:left .85s,top .85s,opacity .3s,transform .15s}
+.rb-tap.is-pressed::after{animation:rb-ripple .6s ease-out}
+@keyframes rb-ripple{from{box-shadow:0 0 0 0 rgba(166,206,78,.8)}to{box-shadow:0 0 0 18px rgba(166,206,78,0)}}
+
+/* laptop interattivo */
+.rb-laptop{max-width:720px;margin:0 auto}
+.rb-laptop__device{position:relative;aspect-ratio:1147/699;filter:drop-shadow(0 22px 30px rgba(0,0,0,.35))}
+.rb-laptop__frame{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:2}
+.rb-laptop__screen{position:absolute;left:9.067%;top:2.289%;width:81.866%;height:86.838%;overflow:hidden;background:#1d4630}
+.rb-laptop__viewport{height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+.rb-laptop__viewport::-webkit-scrollbar{width:0;height:0}
+.rb-laptop__viewport img{width:100%;height:auto;display:block}
+.rb-laptop__hint{position:absolute;right:12px;bottom:12px;z-index:1;padding:5px 10px;border-radius:999px;background:rgba(8,18,12,.82);
+  color:#fff;font-size:10px;line-height:12px;letter-spacing:.08em;text-transform:uppercase;pointer-events:none;transition:opacity .4s ease}
+.rb-laptop__screen.is-scrolled .rb-laptop__hint{opacity:0}
+.rb-screen{position:relative;display:none}
+.rb-screen.is-active{display:block}
+.rb-hot{position:absolute;margin:0;padding:0;border:0;border-radius:4px;background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none}
+.rb-hot:hover,.rb-hot:focus-visible{background:rgba(166,206,78,.25);outline:1px solid rgba(255,255,255,.5)}
+.rb-screen.is-flash .rb-hot{animation:rb-flash .7s ease-out}
+@keyframes rb-flash{0%{background:rgba(166,206,78,.45)}100%{background:transparent}}
+
+/* desk research */
+.rb-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 32px;margin-bottom:44px}
+.rb-fact{border-top:1px solid rgba(200,200,200,1);padding-top:12px}
+.rb-fact__n{display:block;font-family:custom_144777;font-weight:300;font-size:30px;line-height:32px;letter-spacing:-0.4px;margin-bottom:8px}
+.rb-fact__t{display:block;font-size:12px;line-height:14px;color:rgba(104,104,104,1)}
+.rb-specs{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px}
+.rb-spec{border-top:1px solid rgba(200,200,200,1);padding-top:12px;display:grid;grid-template-columns:150px 1fr;gap:16px}
+.rb-spec__k small{display:block;margin-top:4px;font-size:12px;line-height:14px;color:rgba(104,104,104,1)}
+.rb-spec__v ul{margin:0;padding-left:14px}
+.rb-spec__v li{margin-bottom:6px}
+
+/* identity */
+.rb-brands{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+.rb-brand{margin:0}
+.rb-brand__art{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.rb-brand__art img{max-width:58%;max-height:58%;display:block}
+.rb-brand__art--light{background:#F5F4F0}
+.rb-brand__art--dark{background:#1F5130}
+.rb-brand__art--bleed img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:cover}
+.rb-brand figcaption{margin-top:8px;font-size:12px;line-height:14px;color:rgba(104,104,104,1)}
+.rb-brand figcaption strong{display:block;font-weight:400;color:#000;font-size:15px;line-height:15px;margin-bottom:4px}
+.rb-sws{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.rb-sw__chip{display:block;aspect-ratio:1/1;border:1px solid rgba(0,0,0,.08)}
+.rb-sw__name{display:block;margin-top:6px;font-size:12px;line-height:14px}
+.rb-sw__hex{display:block;font-size:9px;line-height:12px;color:rgba(104,104,104,1)}
+.rb-types{border-top:1px solid rgba(200,200,200,1)}
+.rb-type{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:14px 0;border-bottom:1px solid rgba(200,200,200,1)}
+.rb-type__sample{font-family:"Titillium Web",sans-serif;color:#1F5130;letter-spacing:0}
+.rb-type__spec{font-size:12px;line-height:14px;color:rgba(104,104,104,1);white-space:nowrap}
+.rawblock .rb-h + .rb-brands, .rawblock .rb-sws + .rb-h, .rawblock .rb-brands + .rb-lead + .rb-h{margin-top:0}
+.rawblock .rb-lead + .rb-h, .rawblock .rb-sws + .rb-h{margin-top:48px}
+@media (prefers-reduced-motion: reduce){.rb-phone__over.is-in,.rb-tap{transition:none}}
+.rb-spec__v,.rb-issues p,.rb-turn{letter-spacing:0}

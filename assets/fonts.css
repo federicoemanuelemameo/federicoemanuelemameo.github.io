@@ -1,0 +1,99 @@
+
+@font-face {
+  font-weight: 300;
+  font-family: 'custom_144777';
+  font-style: normal;
+  src: url("fonts/font-c54e56ba-00ed-4e24-9601-2da51cdf2a9f.ttf") format('truetype');
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: 'custom_144973';
+  font-style: normal;
+  src: url("fonts/font-1aa99953-40d6-45d5-91f1-23ccdbf99d5a.ttf") format('truetype');
+}
+@font-face{font-family:"wtqc";src:url("fonts/wtqc-n4.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face {
+  font-family: "Austin";
+  src: url("fonts/AustinCy-Roman-Web.woff2") format("woff2"),
+       url("fonts/AustinCy-Roman-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Austin";
+  src: url("fonts/AustinCy-Italic-Web.woff2") format("woff2"),
+       url("fonts/AustinCy-Italic-Web.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Austin";
+  src: url("fonts/AustinCy-Semibold-Web.woff2") format("woff2"),
+       url("fonts/AustinCy-Semibold-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Austin";
+  src: url("fonts/AustinCy-Bold-Web.woff2") format("woff2"),
+       url("fonts/AustinCy-Bold-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Austin";
+  src: url("fonts/AustinCy-Fat-Web.woff2") format("woff2"),
+       url("fonts/AustinCy-Fat-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Austin";
+  src: url("fonts/AustinCy-Ultra-Web.woff2") format("woff2"),
+       url("fonts/AustinCy-Ultra-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Austin";
+  src: url("fonts/AustinCy-UltraItalic-Web.woff2") format("woff2"),
+       url("fonts/AustinCy-UltraItalic-Web.woff") format("woff");
+  font-style: italic;
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Navigo";
+  src: url("fonts/Navigo-Thin-Web.woff2") format("woff2"),
+       url("fonts/Navigo-Thin-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Navigo";
+  src: url("fonts/Navigo-Light-Web.woff2") format("woff2"),
+       url("fonts/Navigo-Light-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Navigo";
+  src: url("fonts/Navigo-Regular-Web.woff2") format("woff2"),
+       url("fonts/Navigo-Regular-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Navigo";
+  src: url("fonts/Navigo-Bold-Web.woff2") format("woff2"),
+       url("fonts/Navigo-Bold-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Navigo";
+  src: url("fonts/Navigo-Black-Web.woff2") format("woff2"),
+       url("fonts/Navigo-Black-Web.woff") format("woff");
+  font-style: normal;
+  font-weight: 900;
+}
